@@ -1,0 +1,50 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dev:client",
+      "type": "shell",
+      "command": "bun run dev:client",
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "dedicated",
+        "group": "bun-dev"
+      }
+    },
+    {
+      "label": "dev:api",
+      "type": "shell",
+      "command": "bun run dev:api",
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "dedicated",
+        "group": "bun-dev"
+      }
+    },
+    {
+      "label": "dev:shared",
+      "type": "shell",
+      "command": "bun run dev:shared",
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "dedicated",
+        "group": "bun-dev"
+      }
+    },
+    {
+      "label": "open:browser",
+      "type": "shell",
+      "command": "node scripts/waitOpen.js 5173 3333",
+      "presentation": {
+        "reveal": "silent",
+        "close": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "dev:all",
+      "problemMatcher": [],
+      "dependsOn": ["dev:client", "dev:api", "dev:shared", "open:browser"]
+    }
+  ]
+}
